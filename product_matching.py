@@ -127,13 +127,9 @@ for l in listings:
 						
 
 			
-formatted_matches = []
-for m in matches:
-	formatted_matches.append({'product_name': m, 'listings': matches[m]})
-
-
 with open('matches.txt','w') as out:
-	for line in formatted_matches:
+	for m in matches:
+		line = {'product_name': m, 'listings': matches[m]}
 		json.dump(line,out)
 		out.write("\n")
 
